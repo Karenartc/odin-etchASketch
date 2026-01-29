@@ -1,10 +1,13 @@
+const bodyDocument =  document.querySelector('body');
 const gridContainer = document.querySelector('.grid-container');
+const colorPencil = document.querySelector('#color-pencil');
 
 const sizeGrid = 600;
 
 let amountSquare = 16;
-
 let squareSize = sizeGrid / amountSquare;
+let activeColor = '#000000';
+let isDrawing = false;
 
 function createSquare(){
     const square = document.createElement('div');
@@ -19,3 +22,24 @@ for (let i = 0; i < amountSquare; i++){
         createSquare();
     }
 }
+
+colorPencil.addEventListener('input', (event) => {
+    activeColor = event.target.value;
+});
+
+gridContainer.addEventListener('mousedown', (event) => {
+    isDrawing = true;
+    if(event.target.classList == 'square'){
+        event.target.style.backgroundColor = activeColor;
+    }
+});
+
+bodyDocument.addEventListener('mouseup', (event) => {
+    isDrawing = false;
+});
+
+gridContainer.addEventListener('mouseover', (event) => {
+    if(isDrawing && event.target.classList == 'square'){
+        event.target.style.backgroundColor = activeColor;
+    }
+});
