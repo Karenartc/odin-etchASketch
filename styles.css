@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+.big-container{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 0px 60px;
+}
+
+.buttons-container{
+    width: 300px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.grid-container{
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 602px;
+    height: 602px;
+}
+
+.square{
+    background-color: antiquewhite;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
