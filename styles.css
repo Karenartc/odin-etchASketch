@@ -1,43 +1,99 @@
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body{
-    background-color: antiquewhite;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background: #14131a;
+  color: #f2f2f2;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
 }
 
 h1{
-    text-align: center;
+  text-align: center;
+  margin: 24px 0 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .big-container{
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    padding: 0px 60px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px 24px 32px;
 }
 
 .buttons-container{
-    width: 300px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
+  width: 320px;
+  padding: 18px;
+  background: linear-gradient(180deg, #1f1d2b, #2a2840);
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.buttons-container label{
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.grid-range-container{
+  padding: 10px;
+  border: 2px solid #000;
+  background: rgba(0,0,0,0.15);
+}
+
+#grid-value{
+  color: #7CFFB2;
+}
+
+input[type="color"]{
+  width: 100%;
+  height: 44px;
+  padding: 0;
+  border: 2px solid #000;
+  background: rgba(0,0,0,0.15);
+}
+
+input[type="range"]{
+  width: 100%;
+}
+
+button{
+  width: 100%;
+  padding: 10px 12px;
+  background: #2d2a3f;
+  color: #f2f2f2;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+button:active{
+  box-shadow: 1px 1px 0 #000;
+  transform: translate(3px, 3px);
 }
 
 .grid-container{
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    width: 602px;
-    height: 602px;
+  width: 602px;
+  height: 602px;
+  background: #0f2a1b;
+  border: 1px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .square{
-    background-color: antiquewhite;
-    border: 1px solid rgba(128, 128, 128, 0.2);
+  background: transparent;
+  border: 1px solid rgba(148, 250, 190, 0.12);
 }
