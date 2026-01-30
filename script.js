@@ -37,8 +37,12 @@ function generateRandomColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-function generateShadowColor(){
-    console.log('shadow color');
+function generateShadowColor(square){
+    let darkness = Number(square.dataset.darkness || 0);
+    darkness = Math.min(darkness + 1, 10);
+    square.dataset.darkness = darkness;
+    const opacity = darkness / 10;
+    square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
 }
 
 createSquare(amountSquare, squareSize);
@@ -80,7 +84,7 @@ gridContainer.addEventListener('mousedown', (event) => {
     isDrawing = true;
     if(event.target.classList.contains('square')){
         event.target.style.backgroundColor = (isRainbow) ? generateRandomColor() :
-                                            (isShadow) ? generateShadowColor() :
+                                            (isShadow) ? generateShadowColor(event.target) :
                                             (isErasing) ? '' : activeColor;
     }
 });
@@ -92,7 +96,7 @@ bodyDocument.addEventListener('mouseup', (event) => {
 gridContainer.addEventListener('mouseover', (event) => {
     if(isDrawing && event.target.classList.contains('square')){
         event.target.style.backgroundColor = (isRainbow) ? generateRandomColor() :
-                                            (isShadow) ? generateShadowColor() :
+                                            (isShadow) ? generateShadowColor(event.target) :
                                             (isErasing) ? '' : activeColor;
     }
 });
